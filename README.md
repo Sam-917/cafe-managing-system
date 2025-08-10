@@ -118,27 +118,28 @@ For any questions or issues, please contact:
 
 ## User Interface Preview
 
-# Home page 
-<img src="/assets/img/preview_prototype-1/home.png" alt="Home page" width="600">
+# Home page  
+
+<img src="/assets/img/preview-prototype-1/home.png" alt="Home page" width="600">
 
 # Menu page
-<img src="/assets/img/preview_prototype-1/menu.png" alt="Menu page" width="600">
+<img src="/assets/img/preview-prototype-1/menu.png" alt="Menu page" width="600">
 
 # Order page
-<img src="/assets/img/preview_prototype-1/order.png" alt="Order page" width="600">
+<img src="/assets/img/preview-prototype-1/order.png" alt="Order page" width="600">
 
 # Reservation page
-<img src="/assets/img/preview_prototype-1/reservation.png" alt="Reservation page" width="600">
+<img src="/assets/img/preview-prototype-1/reservation.png" alt="Reservation page" width="600">
 
 
 
 ## Admin Interface Preview 
 
 # Dashboard page 
-<img src="/assets/img/preview_prototype-1/admin-2.png" alt="Dashboard page " width="600">
+<img src="/assets/img/preview-prototype-1/admin-2.png" alt="Dashboard page " width="600">
 
 # Manage Product page
-<img src="/assets/img/preview_prototype-1/admin-1.png" alt=" Manage Product page" width="600">
+<img src="/assets/img/preview-prototype-1/admin-1.png" alt=" Manage Product page" width="600">
  
 
 **Enjoy managing your cafe operations efficiently with our comprehensive system!** ☕
