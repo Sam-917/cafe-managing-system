@@ -1,0 +1,41 @@
+ 
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        .profile-avatar {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(210, 105, 30, 0.2);
+        }
+        
+        .profile-avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(210, 105, 30, 0.3);
+        }
+        
+        .info-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid #D2691E;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .action-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(210, 105, 30, 0.2);
+        }
+        
+        .divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(210, 105, 30, 0.3), transparent);
+        }
+ 

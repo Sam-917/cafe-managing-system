@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe & Netic - Premium Coffee Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Enhanced Background Images with Vibrant Colors */
+        .hero-bg {
+            background: linear-gradient(135deg, 
+                rgba(236, 72, 153, 0.15) 0%, 
+                rgba(245, 158, 11, 0.2) 25%, 
+                rgba(59, 130, 246, 0.15) 50%, 
+                rgba(16, 185, 129, 0.15) 75%, 
+                rgba(251, 146, 60, 0.2) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23ec4899" opacity="0.2"/><circle cx="80" cy="40" r="1.5" fill="%23f59e0b" opacity="0.2"/><circle cx="40" cy="70" r="2.5" fill="%233b82f6" opacity="0.2"/><circle cx="70" cy="80" r="1" fill="%2310b981" opacity="0.2"/><circle cx="10" cy="60" r="1.8" fill="%23fb923c" opacity="0.2"/><circle cx="90" cy="20" r="2.2" fill="%23ec4899" opacity="0.2"/></svg>');
+            background-size: 200px 200px, 100px 100px;
+            background-repeat: repeat;
+            position: relative;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 60% 20%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .features-bg {
+            background: linear-gradient(45deg, 
+                rgba(147, 51, 234, 0.1) 0%, 
+                rgba(236, 72, 153, 0.1) 25%, 
+                rgba(59, 130, 246, 0.1) 50%, 
+                rgba(16, 185, 129, 0.1) 75%, 
+                rgba(245, 158, 11, 0.1) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><path d="M30 10c-2 0-4 1-4 3s2 3 4 3 4-1 4-3-2-3-4-3zm0 8c-3 0-6 2-6 5s3 5 6 5 6-2 6-5-3-5-6-5z" fill="%239333ea" opacity="0.05"/><circle cx="15" cy="45" r="3" fill="%23ec4899" opacity="0.04"/><circle cx="45" cy="15" r="2" fill="%233b82f6" opacity="0.05"/></svg>');
+            background-size: 150px 150px;
+        }
+        
+        /* Enhanced Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(-3deg); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(3deg); }
+            75% { transform: rotate(-3deg); }
+        }
+        
+        .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-float-slow { animation: floatSlow 4s ease-in-out infinite; }
+        .animate-pulse-custom { animation: pulse 2s ease-in-out infinite; }
+        .animate-wiggle { animation: wiggle 0.5s ease-in-out; }
+        
+        /* Enhanced Hover Effects */
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .hover-bounce:hover {
+            animation: wiggle 0.5s ease-in-out;
+        }
+        
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(245, 158, 11, 0.15);
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+        
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+        
+        /* Image Gallery Styles */
+        .restaurant-image-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .restaurant-image-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .menu-item-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .menu-item-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(245, 158, 11, 0.15);
+        }
+        
+        /* Button Enhancements */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            pointer-events: none;
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-50 via-purple-50 via-blue-50 via-emerald-50 to-amber-50">
+    <!-- Hero Section -->
+    <section class="hero-bg relative py-20 px-4 text-center min-h-screen flex items-center">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h1 class="font-playfair text-5xl md:text-7xl font-bold text-amber-900 mb-6 animate-fadeInUp">
+                Welcome to<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 via-blue-500 to-emerald-500">Cafe & Netic</span>
+            </h1>
+            <p class="text-xl text-gray-700 mb-8 animate-fadeInUp max-w-2xl mx-auto" style="animation-delay: 0.2s;">
+                Where every cup tells a story and every moment becomes a memory. Experience the perfect blend of artisanal coffee and cozy atmosphere.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp" style="animation-delay: 0.4s;">
+                <button class="btn-primary bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 transform hover:scale-105 transition-all duration-300 shadow-xl hover-glow">
+                    Explore Menu
+                </button>
+                <button class="border-2 border-gradient-to-r from-emerald-500 to-blue-500 bg-gradient-to-r from-emerald-500 to-blue-500 bg-clip-text text-transparent px-8 py-4 rounded-full text-lg font-semibold hover:bg-gradient-to-r hover:from-emerald-500 hover:to-blue-500 hover:text-white transition-all duration-300 hover-lift border-emerald-500">
+                    Book a Table
+                </button>
+            </div>
+        </div>
+        
+        <!-- Enhanced Floating Elements -->
+        <div class="floating-element top-20 left-10 text-4xl animate-float hover-bounce" style="animation-delay: 0s;">🫘</div>
+        <div class="floating-element top-40 right-20 text-3xl animate-float-slow hover-bounce" style="animation-delay: 1s;">☕</div>
+        <div class="floating-element bottom-20 left-20 text-2xl animate-float hover-bounce" style="animation-delay: 2s;">🥐</div>
+        <div class="floating-element top-60 left-1/4 text-3xl animate-pulse-custom hover-bounce" style="animation-delay: 0.5s;">🍰</div>
+        <div class="floating-element top-32 right-1/3 text-2xl animate-float-slow hover-bounce" style="animation-delay: 1.5s;">🧁</div>
+        <div class="floating-element bottom-40 right-10 text-4xl animate-float hover-bounce" style="animation-delay: 2.5s;">🍪</div>
+        <div class="floating-element top-80 left-1/2 text-2xl animate-pulse-custom hover-bounce" style="animation-delay: 3s;">🥯</div>
+        <div class="floating-element bottom-60 left-1/3 text-3xl animate-float-slow hover-bounce" style="animation-delay: 1.8s;">🫖</div>
+    </section>
+
+    <!-- Restaurant Gallery Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-playfair text-4xl font-bold text-center text-amber-900 mb-12 animate-fadeInUp">Our Restaurant</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <!-- Restaurant Interior -->
+                <div class="restaurant-image-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <img src="path/to/your/restaurant-interior.jpg" alt="Restaurant Interior" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="font-playfair text-xl font-semibold">Cozy Interior</h3>
+                    </div>
+                </div>
+                
+                <!-- Outdoor Seating -->
+                <div class="restaurant-image-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <img src="path/to/your/outdoor-seating.jpg" alt="Outdoor Seating" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="font-playfair text-xl font-semibold">Outdoor Terrace</h3>
+                    </div>
+                </div>
+                
+                <!-- Coffee Bar -->
+                <div class="restaurant-image-card group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
+                    <img src="path/to/your/coffee-bar.jpg" alt="Coffee Bar" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="font-playfair text-xl font-semibold">Coffee Bar</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights Section -->
+    <section class="features-bg py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-playfair text-4xl font-bold text-center text-amber-900 mb-12 animate-fadeInUp">Our Specialties</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <!-- Signature Coffee -->
+                <div class="menu-item-card group bg-gradient-to-br from-pink-50 to-purple-100 border border-pink-200 rounded-2xl shadow-lg overflow-hidden hover-lift">
+                    <div class="relative overflow-hidden">
+                        <img src="path/to/your/signature-coffee.jpg" alt="Signature Coffee" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Popular
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-xl font-semibold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent mb-2">Signature Latte</h3>
+                        <p class="text-gray-700 text-sm mb-3">Our house blend with steamed milk and artistic foam</p>
+                        <div class="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent font-bold text-lg">$4.50</div>
+                    </div>
+                </div>
+                
+                <!-- Pastries -->
+                <div class="menu-item-card group bg-gradient-to-br from-blue-50 to-emerald-100 border border-blue-200 rounded-2xl shadow-lg overflow-hidden hover-lift">
+                    <div class="relative overflow-hidden">
+                        <img src="path/to/your/pastries.jpg" alt="Fresh Pastries" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-xl font-semibold bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent mb-2">Fresh Pastries</h3>
+                        <p class="text-gray-700 text-sm mb-3">Daily baked croissants, muffins, and artisan breads</p>
+                        <div class="bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent font-bold text-lg">From $2.50</div>
+                    </div>
+                </div>
+                
+                <!-- Breakfast -->
+                <div class="menu-item-card group bg-gradient-to-br from-emerald-50 to-amber-100 border border-emerald-200 rounded-2xl shadow-lg overflow-hidden hover-lift">
+                    <div class="relative overflow-hidden">
+                        <img src="path/to/your/breakfast.jpg" alt="Breakfast Plate" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-xl font-semibold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent mb-2">Breakfast Special</h3>
+                        <p class="text-gray-700 text-sm mb-3">Eggs, toast, and fresh fruit with coffee</p>
+                        <div class="bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent font-bold text-lg">$8.95</div>
+                    </div>
+                </div>
+                
+                <!-- Desserts -->
+                <div class="menu-item-card group bg-gradient-to-br from-purple-50 to-pink-100 border border-purple-200 rounded-2xl shadow-lg overflow-hidden hover-lift">
+                    <div class="relative overflow-hidden">
+                        <img src="path/to/your/desserts.jpg" alt="Desserts" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-xl font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">Sweet Treats</h3>
+                        <p class="text-gray-700 text-sm mb-3">Cakes, cookies, and seasonal desserts</p>
+                        <div class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-bold text-lg">From $3.75</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 px-4 bg-white/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-playfair text-4xl font-bold text-center text-amber-900 mb-12">Why Choose Cafe & Netic?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card text-center p-8 bg-gradient-to-br from-pink-50 to-purple-50 border border-pink-200 rounded-2xl shadow-lg">
+                    <div class="feature-icon text-5xl mb-4 animate-float">☕</div>
+                    <h3 class="font-playfair text-2xl font-semibold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent mb-4">Premium Coffee</h3>
+                    <p class="text-gray-700">Sourced from the finest coffee farms around the world, roasted to perfection daily.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card text-center p-8 bg-gradient-to-br from-blue-50 to-emerald-50 border border-blue-200 rounded-2xl shadow-lg" style="animation-delay: 0.2s;">
+                    <div class="feature-icon text-5xl mb-4 animate-float" style="animation-delay: 1s;">🏠</div>
+                    <h3 class="font-playfair text-2xl font-semibold bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent mb-4">Cozy Atmosphere</h3>
+                    <p class="text-gray-700">A warm, inviting space perfect for work, study, or catching up with friends.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card text-center p-8 bg-gradient-to-br from-emerald-50 to-amber-50 border border-emerald-200 rounded-2xl shadow-lg" style="animation-delay: 0.4s;">
+                    <div class="feature-icon text-5xl mb-4 animate-float" style="animation-delay: 2s;">👨‍🍳</div>
+                    <h3 class="font-playfair text-2xl font-semibold bg-gradient-to-r from-emerald-600 to-amber-600 bg-clip-text text-transparent mb-4">Expert Baristas</h3>
+                    <p class="text-gray-700">Our skilled baristas craft each drink with passion and precision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 px-4 bg-gradient-to-r from-purple-600 via-pink-500 via-blue-500 to-emerald-500 text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="floating-element top-10 left-10 text-6xl animate-float-slow">☕</div>
+            <div class="floating-element top-20 right-20 text-4xl animate-float">🫘</div>
+            <div class="floating-element bottom-10 left-20 text-5xl animate-pulse-custom">🥐</div>
+            <div class="floating-element bottom-20 right-10 text-4xl animate-float-slow">🍰</div>
+        </div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h2 class="font-playfair text-4xl font-bold mb-6 animate-fadeInUp">Ready to Experience the Magic?</h2>
+            <p class="text-xl mb-8 animate-fadeInUp" style="animation-delay: 0.2s;">Join us today and discover why Cafe & Netic is more than just a coffee shop.</p>
+            <button class="btn-primary bg-white bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent px-8 py-4 rounded-full text-lg font-semibold hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transform hover:scale-105 transition-all duration-300 shadow-xl hover-lift animate-fadeInUp border-2 border-white" style="animation-delay: 0.4s;">
+                Visit Us Now
+            </button>
+        </div>
+    </section>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96cc8ef6f46d9f92',t:'MTc1NDc5ODEzNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

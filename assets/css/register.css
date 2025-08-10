@@ -1,0 +1,175 @@
+ 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .registration-wrapper {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        
+        .registration-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+        }
+        
+        .registration-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .registration-header h2 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        
+        .registration-header p {
+            color: #7f8c8d;
+            font-size: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #34495e;
+            font-size: 14px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+            outline: none;
+        }
+        
+        .password-strength-container {
+            margin-top: 8px;
+            height: 4px;
+            background-color: #ecf0f1;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .password-strength-bar {
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 13px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .login-link {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        
+        .login-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .required-field::after {
+            content: " *";
+            color: #e74c3c;
+        }
+        
+        /* New styles for password toggle */
+        .password-input-container {
+            position: relative;
+        }
+        
+        .password-toggle {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        .password-toggle:hover {
+            color: #3498db;
+        }
+        
+         #homeButtonContainer {
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-outline-secondary {
+            border-color: #e5e7eb;
+            color: #4b5563;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #f3f4f6;
+            border-color: #d1d5db;
+            color: #1f2937;
+            transform: translateY(-1px);
+        }
+
+        #homeButtonContainer {
+    transition: opacity 0.3s ease;
+}
