@@ -3,24 +3,24 @@
 ## Overview
 The Cafe Management System is a comprehensive solution designed to streamline daily operations for modern cafes. This system handles online orders (dine-in, takeaway, and delivery), table reservations, and user registration through an intuitive interface.
 
-## DISCLAIMER : 
+## Disclaimer : 
 This project is just a prototype for education purpose. It is not intended for production use. Furthermore, it does not include any security measures to protect user data and some feature will not fully working properly due to the complexity of the project.
 
 ## Features
 
 ### Order Management
 - **Multi-channel ordering**: Dine-in, takeaway, and delivery options
-- **Real-time order tracking**: Monitor order status from placement to fulfillment
-- **Order history**: View past orders for customers and staff
+- **Real-time order tracking**: Admin can monitor order status from placement to fulfillment  
+- **Order history**: Admin can view past orders for customers 
 
 ### Reservation System
 - **Table booking**: Customers can reserve tables online
 - **Reservation calendar**: Visual interface for staff to manage bookings
-- **Automated reminders**: Notifications for upcoming reservations
+- **Table Visualization**: Visual cafe layout interface featuring table mapping with each specifies each unique features such as capacity, shape, and location.  
 
 ### User Management
 - **Customer registration**: Secure sign-up and profile management
-- **Role-based access**: Different permissions for customers, staff, and admin
+- **Role-based access**: Different permissions for customers, and admin
 
 ## Technology Stack
 
@@ -55,12 +55,27 @@ This project is just a prototype for education purpose. It is not intended for p
    
    # Navigate to project directory
    cd cafe-management-system
+
+   # Open code & run in VS Code
+   code . 
     
    ```
 
 ### Note : 
-Make sure VS Code and XAMPP Control Panel installed, after that start Apache and mySQL module then you can import the database from database_setup.sql in the PhpMyAdmin localserver.
+1. Make sure VS Code and XAMPP Control Panel is installed. After that, start Apache and mySQL module then you can import the database from database_setup.sql in the PhpMyAdmin localserver.
 
+2. Currently, our dine-in ordering and reservation booking systems are temporarily unavailable due to ongoing development complexity and technical optimization requirement. We sincerely apologize for any inconvenience this may cause and appreciate your patience as we work diligently to enhance these features for an improved user experience.
+
+3. To access the administrative interface, please use the following credentials:
+   ```bash
+       Username: Admin
+       Password: 123
+   ```
+   The admin dashboard provides comprehensive access to sales statistic and analytics, database management with table controls and administrative feature including order, product and user management (edit feature)
+
+   **Please note**: Adding order, product and user feature is unavailable :(
+   
+   
 ## Usage
 
 ### For Customers
@@ -69,7 +84,7 @@ Make sure VS Code and XAMPP Control Panel installed, after that start Apache and
 3. Make table reservations
 4. Track order status in real-time
 
-### For Staff 
+### For Staff (Staff role is unavailable for now)
 1. Access the admin dashboard
 2. Manage incoming orders
 3. Update reservation status
@@ -85,7 +100,7 @@ Make sure VS Code and XAMPP Control Panel installed, after that start Apache and
 
 ```
 cafe-management-system/
-├── assets/            # Static files (CSS, JS, images)
+├── assets/             # Static files (CSS, JS, images)
 │   ├── css/
 │   ├── js/
 │   └── img/
@@ -103,32 +118,31 @@ For any questions or issues, please contact:
 
 ---
 
-## Preview 
-
+# Preview 
 
 ## User Interface Preview
 
-# Home page  
+### Home page  
 
 <img src="/assets/img/preview-prototype-1/home.png" alt="Home page" width="600">
 
-# Menu page
+### Menu page
 <img src="/assets/img/preview-prototype-1/menu.png" alt="Menu page" width="600">
 
-# Order page
+### Order page
 <img src="/assets/img/preview-prototype-1/order.png" alt="Order page" width="600">
 
-# Reservation page
+### Reservation page
 <img src="/assets/img/preview-prototype-1/reservation.png" alt="Reservation page" width="600">
 
 
 
-# Admin Interface Preview 
+## Admin Interface Preview 
 
-## Dashboard page 
+### Dashboard page 
 <img src="/assets/img/preview-prototype-1/admin-2.png" alt="Dashboard page " width="600">
 
-## Manage Product page
+### Manage Product page
 <img src="/assets/img/preview-prototype-1/admin-1.png" alt=" Manage Product page" width="600">
  
  
