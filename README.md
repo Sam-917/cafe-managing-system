@@ -121,27 +121,27 @@ For any questions or issues, please contact:
 
 ## User Interface Preview
 
-### Home page  
+### Home page (index.php) 
 
 <img src="/assets/img/preview-prototype-1/home.png" alt="Home page" width="600">
 
-### Menu page
+### Menu page (menu.php) 
 <img src="/assets/img/preview-prototype-1/menu.png" alt="Menu page" width="600">
 
-### Order page
+### Order page (order.php) 
 <img src="/assets/img/preview-prototype-1/order.png" alt="Order page" width="600">
 
-### Reservation page
+### Reservation page (reservation.php) 
 <img src="/assets/img/preview-prototype-1/reservation.png" alt="Reservation page" width="600">
 
 
 
 ## Admin Interface Preview 
 
-### Dashboard page 
+### Dashboard page (admin/dashboard.php) 
 <img src="/assets/img/preview-prototype-1/admin-2.png" alt="Dashboard page " width="600">
 
-### Manage Product page
+### Manage Product page (admin/admin_products.php) 
 <img src="/assets/img/preview-prototype-1/admin-1.png" alt=" Manage Product page" width="600">
  
  
