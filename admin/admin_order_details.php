@@ -223,9 +223,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
                                     <?php foreach ($order_items as $item): ?>
                                     <div class="px-6 py-4">
                                         <div class="flex items-start">
-                                            <?php if (!empty($item['image'])): ?>
+                                            <?php if (!empty($item['image_url'])): ?>
                                                 <div class="flex-shrink-0 h-16 w-16 rounded-md overflow-hidden">
-                                                    <img src="../uploads/products/<?= htmlspecialchars($item['image']) ?>" alt="<?= htmlspecialchars($item['product_name']) ?>" class="h-full w-full object-cover">
+                                                    <img src="../assets/img/product/removebg/<?= htmlspecialchars($item['image_url']) ?>" alt="<?= htmlspecialchars($item['product_name']) ?>" class="h-full w-full object-cover">
                                                 </div>
                                             <?php endif; ?>
                                             <div class="ml-4 flex-1">

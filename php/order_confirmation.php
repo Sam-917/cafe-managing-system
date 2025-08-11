@@ -162,26 +162,13 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         
         <div class="text-center">
-            <a href="index.php" class="inline-block bg-gradient-to-r from-amber-600 to-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-xl">
+            <a href="../index.php" class="inline-block bg-gradient-to-r from-amber-600 to-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-xl">
                 Back to Home
             </a>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-amber-900 text-white py-12 px-4">
-        <div class="max-w-6xl mx-auto text-center">
-            <div class="flex items-center justify-center space-x-2 mb-6">
-                <div class="text-3xl">☕</div>
-                <span class="font-playfair text-3xl font-bold">Cafe & Netic</span>
-            </div>
-            <p class="text-amber-200 mb-6">123 Coffee Street, Bean City | Open Daily 6AM - 10PM</p>
-            <div class="flex justify-center space-x-6 text-2xl">
-                <span class="hover:text-amber-300 cursor-pointer transition-colors">📧</span>
-                <span class="hover:text-amber-300 cursor-pointer transition-colors">📱</span>
-                <span class="hover:text-amber-300 cursor-pointer transition-colors">📍</span>
-            </div>
-        </div>
-    </footer>
+
+<?php include '../includes/footer.php'; ?>
 </body>
 </html>

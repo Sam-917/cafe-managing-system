@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $conn->commit();
         
         // Redirect to confirmation page
-        header("Location: order_confirmation.php?id=$order_id");
+        header("Location: php/order_confirmation.php?id=$order_id");
         exit();
         
     } catch (Exception $e) {

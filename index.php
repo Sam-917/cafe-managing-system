@@ -187,12 +187,12 @@
                 Where every cup tells a story and every moment becomes a memory. Experience the perfect blend of artisanal coffee and cozy atmosphere.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp" style="animation-delay: 0.4s;">
-                <button class="btn-primary bg-gradient-to-r from-amber-600 to-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover-glow">
+                <a href='menu.php' class="btn-primary bg-gradient-to-r from-amber-600 to-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover-glow">
                     Explore Menu
-                </button>
-                <button class="border-2 border-amber-600 text-amber-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-amber-600 hover:text-white transition-all duration-300 hover-lift">
+                </a>
+                <a href='reservation.php' class="border-2 border-amber-600 text-amber-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-amber-600 hover:text-white transition-all duration-300 hover-lift">
                     Book a Table
-                </button>
+                 </a>
             </div>
         </div>
         
