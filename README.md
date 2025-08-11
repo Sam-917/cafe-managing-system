@@ -98,11 +98,11 @@ cafe-management-system/
 ├── assets/            # Static files (CSS, JS, images)
 │   ├── css/
 │   ├── js/
-│   └── images/
-├── incudes/            # Configuration files
-├── php/       # PHP controllers
-├── sql_setup/            # Database models
-├── admin/              # Composer dependencies
+│   └── img/
+├── incudes/            # Configuration files and reusable
+├── php/                # PHP controllers
+├── sql_setup/          # Database models
+├── admin/              # Admin Interface 
 ```
 
 ## Support
@@ -133,13 +133,12 @@ For any questions or issues, please contact:
 
 
 
-## Admin Interface Preview 
+# Admin Interface Preview 
 
-# Dashboard page 
+## Dashboard page 
 <img src="/assets/img/preview-prototype-1/admin-2.png" alt="Dashboard page " width="600">
 
-# Manage Product page
+## Manage Product page
 <img src="/assets/img/preview-prototype-1/admin-1.png" alt=" Manage Product page" width="600">
  
-
-**Enjoy managing your cafe operations efficiently with our comprehensive system!** ☕
+ 
