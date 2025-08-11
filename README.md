@@ -58,7 +58,8 @@ This project is just a prototype for education purpose. It is not intended for p
     
    ```
 
-## Note : Make sure VS Code and XAMPP Control Panel installed, after that start Apache and mySQL module then you can import the database from database_setup.sql in the PhpMyAdmin localserver.
+### Note : 
+Make sure VS Code and XAMPP Control Panel installed, after that start Apache and mySQL module then you can import the database from database_setup.sql in the PhpMyAdmin localserver.
 
 ## Usage
 
