@@ -89,7 +89,7 @@ try {
     $stats['reservations_by_location'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     // Recent reservations
-    $stmt = $conn->query("SELECT r.*, t.name as table_name, l.name as location_name
+    $stmt = $conn->query("SELECT r.*, t.table_number as table_number, l.name as location_name
                          FROM reservations r
                          JOIN restaurant_tables t ON r.table_id = t.table_id
                          JOIN restaurant_locations l ON t.location_id = l.location_id
@@ -122,11 +122,11 @@ try {
     $stats['locations'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     // Table utilization
-    $stmt = $conn->query("SELECT t.name, COUNT(r.reservation_id) as reservation_count 
+    $stmt = $conn->query("SELECT t.table_number, COUNT(r.reservation_id) as reservation_count 
                          FROM restaurant_tables t 
                          LEFT JOIN reservations r ON t.table_id = r.table_id 
                          WHERE r.reservation_date >= CURDATE() 
-                         GROUP BY t.name 
+                         GROUP BY t.table_number 
                          ORDER BY reservation_count DESC 
                          LIMIT 5");
     $stats['table_utilization'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -426,7 +426,7 @@ try {
                                 <div class="flex justify-between items-start">
                                     <div>
                                         <p class="font-medium text-gray-800"><?= htmlspecialchars($reservation['customer_name']) ?></p>
-                                        <p class="text-sm text-gray-500"><?= htmlspecialchars($reservation['table_name']) ?></p>
+                                        <p class="text-sm text-gray-500"><?= htmlspecialchars($reservation['table_number']) ?></p>
                                     </div>
                                     <div>
                                         <span class="px-2 py-1 text-xs rounded-full reservation-status-<?= $reservation['status'] ?>">

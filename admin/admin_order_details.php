@@ -35,7 +35,7 @@ try {
 
     // Fetch order items
     $items_stmt = $conn->prepare("
-        SELECT oi.*, p.name as product_name, p.image
+        SELECT oi.*, p.name as product_name, p.image_url    
         FROM order_items oi
         JOIN products p ON oi.product_id = p.product_id
         WHERE oi.order_id = :order_id

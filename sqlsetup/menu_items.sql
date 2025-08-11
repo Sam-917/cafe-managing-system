@@ -1,4 +1,3 @@
-USE cafe; 
 
 CREATE TABLE categories (
     category_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -147,3 +146,4 @@ INSERT INTO seasonal_items (product_id, start_date, end_date, is_limited_edition
 
 -- Holiday special
 (15, '2023-12-01', '2023-12-31', TRUE);
+

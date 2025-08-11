@@ -20,7 +20,7 @@ if ($location_id) {
     $sql .= " WHERE t.location_id = :location_id";
 }
 
-$sql .= " ORDER BY l.name, t.name";
+$sql .= " ORDER BY l.name, t.table_number";
 
 try {
     $stmt = $conn->prepare($sql);
@@ -139,7 +139,7 @@ try {
                                             <?= htmlspecialchars($table['table_id']) ?>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            <?= htmlspecialchars($table['name']) ?>
+                                            <?= htmlspecialchars($table['table_number']) ?>
                                             <?php if (!empty($table['description'])): ?>
                                                 <div class="text-xs text-gray-500 mt-1"><?= htmlspecialchars(substr($table['description'], 0, 50)) ?>...</div>
                                             <?php endif; ?>

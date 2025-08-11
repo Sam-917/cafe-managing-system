@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'includes/db_connection.php';
+require '../includes/config.php';
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     header("Location: index.php");

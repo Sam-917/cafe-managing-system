@@ -18,7 +18,7 @@ if (!in_array($status_filter, $valid_statuses)) {
 }
 
 // Build the SQL query based on filter
-$sql = "SELECT r.*, t.name as table_name, l.name as location_name
+$sql = "SELECT r.*, t.table_number as table_number, l.name as location_name
         FROM reservations r
         JOIN restaurant_tables t ON r.table_id = t.table_id
         JOIN restaurant_locations l ON t.location_id = l.location_id";
@@ -221,7 +221,7 @@ try {
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            <?= htmlspecialchars($reservation['table_name']) ?>
+                                            <?= htmlspecialchars($reservation['table_number']) ?>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                             <?= $reservation['guests'] ?>

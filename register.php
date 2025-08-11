@@ -47,6 +47,7 @@
             </div>
             
             <form id="registrationForm" action="php/process_registration.php" method="POST">
+                <div id="errorMessage" class="error-message" style="display: none; margin-bottom: 15px;"></div>
                 <div class="form-group">
                     <label for="first_name" class="required-field">First Name</label>
                     <input type="text" id="first_name" name="first_name" required>

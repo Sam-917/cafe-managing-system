@@ -9,7 +9,7 @@ $order_type = isset($_GET['type']) && in_array($_GET['type'], $valid_types) ? $_
 // Get available tables for dine-in
 $available_tables = [];
 if ($order_type == 'dine_in') {
-    $stmt = $conn->query("SELECT * FROM restaurant_tables WHERE is_active = 1 ORDER BY name");
+    $stmt = $conn->query("SELECT * FROM restaurant_tables WHERE is_active = 1 ORDER BY table_number");
     $available_tables = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
@@ -344,7 +344,7 @@ $locations = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
             <!-- Submit Button -->
             <div class="text-center">
-                <button type="submit" class="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-12 py-4 rounded-full text-lg font-semibold hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-xl">
+                <button method='post' type="submit" class="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-12 py-4 rounded-full text-lg font-semibold hover:from-amber-700 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-xl">
                     Place Order
                 </button>
             </div>

@@ -59,7 +59,7 @@ try {
     echo json_encode([
         'success' => true,
         'message' => 'Registration successful!',
-        'redirect' => '../login.php?registration=success'
+        'redirect' => 'login.php?registration=success'
     ]);
 
 } catch (Exception $e) {

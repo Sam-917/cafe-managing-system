@@ -359,7 +359,7 @@ if ($selectedLocation) {
                                     <div class="text-center pt-4 small">Kitchen</div>
                                 </div>
                                  
-                                <!-- Tables --> 
+                                <!-- Tables -->
                                 <?php foreach ($filteredTables as $table): 
                                     $isOccupied = in_array($table['table_id'], $occupiedTables);
                                     $classes = 'restaurant-table';
@@ -368,11 +368,11 @@ if ($selectedLocation) {
                                     if ($isOccupied) $classes .= ' occupied';
                                 ?>
                                 <div class="<?php echo $classes; ?>" 
-                                    data-table="<?php echo $table['table_id']; ?>"
+                                    data-table="<?php echo $table['table_id']; ?>" 
                                     onclick="<?php echo $isOccupied ? '' : "selectTable('{$table['table_id']}')"; ?>"
                                     style="top: <?php echo $table['y_position'] ?? rand(80, 320); ?>px; 
                                             left: <?php echo $table['x_position'] ?? rand(20, 220); ?>px;">
-                                    <div class="table-number"><?php echo $table['table_id']; ?></div>
+                                    <div class="table-number"><?php echo $table['table_id']; ?></div> 
                                 </div>
                                 <?php endforeach; ?>
                             </div>
@@ -556,12 +556,6 @@ if ($selectedLocation) {
         const selectedDate = '<?php echo $selectedDate; ?>';
         const selectedTime = '<?php echo $selectedTime; ?>';
         const selectedTable = '<?php echo isset($_GET['table_id']) ? $_GET['table_id'] : ''; ?>';
-        const occupiedTables = <?php echo json_encode($occupiedTables); ?>; // Add this line
-        
-        // Initialize the form with selected values if they exist
-        if (selectedLocation && locationData[selectedLocation]) {
-            updateLocationDisplay(locationData[selectedLocation]);
-        }
         
         // Initialize the form with selected values if they exist
         if (selectedLocation && locationData[selectedLocation]) {

@@ -156,7 +156,6 @@ function initReservationSystem() {
         }
     }
 
-    // Update the loadTableAvailability function
     function loadTableAvailability() {
         // Filter tables by selected location and check if they're active
         const tablesForLocation = Object.values(tableData).filter(table => 
@@ -168,8 +167,7 @@ function initReservationSystem() {
             const tableInfo = tableData[tableId];
             
             if (tableInfo && tableInfo.location_id == selectedLocation && tableInfo.is_active == 1) {
-                const isOccupied = isTableOccupied(tableId);
-                if (isOccupied) {
+                if (isTableOccupied(tableId)) {
                     table.classList.add('occupied');
                     table.onclick = null;
                 } else {
@@ -184,36 +182,11 @@ function initReservationSystem() {
         });
     }
 
-    function loadTableAvailability() {
-        if (!selectedLocation) return;
-        
-        // Clear all tables first
-        document.querySelectorAll('.restaurant-table').forEach(table => {
-            table.style.display = 'none';
-        });
-        
-        // Show only tables for selected location
-        Object.values(tableData).forEach(table => {
-            if (table.location_id == selectedLocation && table.is_active == 1) {
-                const tableElement = document.querySelector(`[data-table="${table.table_id}"]`);
-                if (tableElement) {
-                    const isOccupied = isTableOccupied(table.table_id);
-                    
-                    tableElement.style.display = 'block';
-                    tableElement.classList.toggle('occupied', isOccupied);
-                    
-                    if (!isOccupied) {
-                        tableElement.onclick = function() { 
-                            selectTable(table.table_id); 
-                        };
-                    } else {
-                        tableElement.onclick = null;
-                    }
-                }
-            }
-        });
+    function isTableOccupied(tableId) {
+        // This should be implemented to check if the table is already reserved
+        // For now, we'll just return false to make all active tables selectable
+        return false;
     }
-
 
     function updateSelectedLocationDisplay() {
         if (selectedLocation && locationData[selectedLocation]) {
@@ -279,27 +252,21 @@ function initReservationSystem() {
     }
 
     function selectTable(tableId) {
-    // Convert tableId to number for comparison
-    tableId = parseInt(tableId);
-    
-    if (tableData[tableId] && tableData[tableId].is_active == 1 && !isTableOccupied(tableId)) {
-        document.querySelectorAll('.restaurant-table').forEach(table => {
-            table.classList.remove('selected');
-        });
-        
-        const tableElement = document.querySelector(`[data-table="${tableId}"]`);
-        if (tableElement) {
-            tableElement.classList.add('selected');
-            selectedTable = tableId;
-            updateUrlParameters({ table_id: tableId });
-            updateSelectedTableDisplay();
-            showTableInfo(tableId);
+        if (tableData[tableId] && tableData[tableId].is_active == 1) {
+            document.querySelectorAll('.restaurant-table').forEach(table => {
+                table.classList.remove('selected');
+            });
             
-            // Enable the next button if not already enabled
-            document.getElementById('nextBtn').disabled = false;
+            const tableElement = document.querySelector(`[data-table="${tableId}"]`);
+            if (tableElement) {
+                tableElement.classList.add('selected');
+                selectedTable = tableId;
+                updateUrlParameters({ table_id: tableId });
+                updateSelectedTableDisplay();
+                showTableInfo(tableId);
+            }
         }
     }
-}
 
     function updateSelectedTableDisplay() {
         if (selectedTable && tableData[selectedTable]) {

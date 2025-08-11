@@ -103,28 +103,31 @@ function initTableVisualization() {
     }
     
     // Select table handler
-    function selectTable(table) {
-        if (!dateInput.value || !timeSelect.value) {
-            alert('Please select a date and time first!');
-            return;
-        }
-        
-        // Clear previous selection
-        document.querySelectorAll('.table-item').forEach(el => {
-            el.classList.remove('table-selected', 'bg-blue-500');
-            if (!el.classList.contains('table-booked')) {
-                el.classList.add('bg-green-500');
-            }
+    function selectTable(tableId) {
+    // Ensure tableId is a number
+    tableId = parseInt(tableId);
+    
+    // Check if table exists, is active, and not occupied
+    if (tableData[tableId] && tableData[tableId].is_active == 1 && !isTableOccupied(tableId)) {
+        // Remove selection from all tables
+        document.querySelectorAll('.restaurant-table').forEach(table => {
+            table.classList.remove('selected');
         });
         
-        // Select new table
-        const tableElement = document.querySelector(`[data-table-id="${table.id}"]`);
-        tableElement.classList.remove('bg-green-500');
-        tableElement.classList.add('bg-blue-500', 'table-selected');
-        
-        // Update the hidden select
-        tableSelect.value = table.id;
+        // Select the new table
+        const tableElement = document.querySelector(`[data-table="${tableId}"]`);
+        if (tableElement) {
+            tableElement.classList.add('selected');
+            selectedTable = tableId;
+            updateUrlParameters({ table_id: tableId });
+            updateSelectedTableDisplay();
+            showTableInfo(tableId);
+            
+            // Enable the next button
+            document.getElementById('nextBtn').disabled = false;
+        }
     }
+}
     
     // Initialize
     renderTables();

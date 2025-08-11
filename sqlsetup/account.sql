@@ -1,5 +1,3 @@
-CREATE DATABASE IF NOT EXISTS cafe;
-USE cafe;
 
 -- Users table for customers and admin 
 CREATE TABLE users (
