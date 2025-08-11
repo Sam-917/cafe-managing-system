@@ -32,8 +32,7 @@ This project is just a prototype for education purpose. It is not intended for p
 - **JavaScript**: Interactive elements and client-side validation
 
 ### Backend
-- **PHP**: Server-side logic and business rules
-- **JavaScript (Node.js optional)**: Additional backend functionality
+- **PHP**: Server-side logic and business rules 
 - **MySQL**: Relational database for structured data storage
 
 ### Database
