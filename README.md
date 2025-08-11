@@ -1,7 +1,7 @@
 # CafeNetic a Cafe Management System
 
 ## Overview
-The Cafe Management System is a comprehensive solution designed to streamline daily operations for modern cafes. This system handles online orders (dine-in, takeaway, and delivery), table reservations, and user registration through an intuitive interface.
+CafeNetic is café management system with comprehensive solution designed to streamline daily operations for modern cafés. This system handles online orders (dine-in, takeaway, and delivery), table reservations, and user registration through an intuitive interface. 
 
 ## Disclaimer : 
 This project is just a prototype for education purpose. It is not intended for production use. Furthermore, it does not include any security measures to protect user data and some feature will not fully working properly due to the complexity of the project.
