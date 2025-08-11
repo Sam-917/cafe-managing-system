@@ -51,25 +51,14 @@ This project is just a prototype for education purpose. It is not intended for p
 2. **Setup**:
    ```bash
    # Clone the repository
-   git clone https://github.com/yourusername/cafe-management-system.git
+   git clone https://github.com/Sam-917/cafe-managing-system.git
    
    # Navigate to project directory
    cd cafe-management-system
-   
-   # Install dependencies
-   composer install
-   
-   # Set up database
-   mysql -u root -p < database/schema.sql
-   
-   # Configure environment variables
-   cp .env.example .env
+    
    ```
 
-3. **Configuration**:
-   - Update database credentials in `.env` file
-   - Configure mail settings for notifications
-   - Set up payment gateway keys
+## Note : Make sure VS Code and XAMPP Control Panel installed, after that start Apache and mySQL module then you can import the database from database_setup.sql in the PhpMyAdmin localserver.
 
 ## Usage
 
