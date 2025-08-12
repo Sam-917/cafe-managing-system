@@ -9,18 +9,25 @@ This project is just a prototype for education purpose. It is not intended for p
 ## Features
 
 ### Order Management
-- **Multi-channel ordering**: Dine-in, takeaway, and delivery options
-- **Real-time order tracking**: Admin can monitor order status from placement to fulfillment  
-- **Order history**: Admin can view past orders for customers 
+- **Multi-channel ordering**: Dine-in, takeaway, and delivery options.
+- **Real-time order tracking**: Admin can monitor order status from placement to fulfillment.  
+- **Order history**: Admin can view past orders for customers. 
 
 ### Reservation System
-- **Table booking**: Customers can reserve tables online
-- **Reservation calendar**: Visual interface for staff to manage bookings
-- **Table Visualization**: Visual cafe layout interface featuring table mapping with each specifies each unique features such as capacity, shape, and location.  
+- **Table booking**: Customers can reserve tables online.
+- **Reservation calendar**: Visual interface for staff to manage bookings.
+- **Table Visualization**: Visual cafe layout interface featuring table mapping with each specifies each unique features such as capacity, shape, and location. 
 
 ### User Management
-- **Customer registration**: Secure sign-up and profile management
-- **Role-based access**: Different permissions for customers, and admin
+- **Customer registration**: Secure sign-up and profile management.
+- **Role-based access**: Different permissions for customers, and admin.  
+
+### Product Management
+- **Adding and Editing Product**: Admin can handle product management by change their product details in terms of price, name, description etc. 
+- **Product Details**: Customer can view product details by clicking the product card at the menu page.
+
+### Administrator 
+- Admin is given permission to edit the cafe locations, table, product, user, reservation, order and etc. 
 
 ## Technology Stack
 
